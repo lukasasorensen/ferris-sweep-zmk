@@ -18,4 +18,4 @@
 #
 ---
 include:
-  - board: ferris_rev02
+  - board: nrfmicro_13
