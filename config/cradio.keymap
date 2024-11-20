@@ -27,7 +27,7 @@
         layer0 {
             bindings = <
            &kp Q         &kp W  &kp E  &kp R  &kp T                &kp Y  &kp U     &kp I     &kp O    &kp P     
-           &kp A         &kp S  &kp D  &lt L3 F  &lt L4 G          &kp H  &kp J     &kp K     &kp L    &kp SEMI  
+           &kp A         &kp S  &kp D  &lt L3 F  &lt L4 G          &kp H  &kp J     &kp K     &kp L    &mt LS(LC(LA(LGUI))) SEMI  
            &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B                &kp N  &lt L5 M  &kp COMMA &kp DOT  &mt RSHIFT SLASH 
                   &mt LCTRL BSPC &mt LGUI TAB                        &mt RGUI ENTER  &lt L1 SPACE  
             >;
