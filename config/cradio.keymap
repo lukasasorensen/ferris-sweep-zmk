@@ -125,7 +125,7 @@
          */
         layer3 {
             bindings = <
-                &none  &none  &none  &none  &kp CAPS                          &kp LC(LA(LS(LGUI(LEFT)))) &kp HOME   &kp END    &none      &kp LC(LA(LS(LGUI(RIGHT))))  
+                &none  &none  &none  &none  &kp CAPS                          &kp LC(LA(LS(LG(LEFT)))) &kp HOME   &kp END    &none      &kp LC(LA(LS(LG(RIGHT))))  
                 &none  &none  &none  &none  &none                             &kp LEFT                   &kp DOWN   &kp UP     &kp RIGHT  &none  
                 &none  &none  &none  &none  &none                             &none                      &kp PG_DN  &kp PG_UP  &none      &none  
                           &mo L5 &kp TAB                                                   &kp ENTER  &kp SPACE
@@ -170,10 +170,10 @@
          */
         layer5 {
             bindings = <
-                &trans  &trans  &trans  &trans  &trans                             &kp LC(LALT(RIGHT)) &kp HOME  &kp END    &trans        &kp LC(LALT(RIGHT))  
+                &trans  &trans  &trans  &trans  &trans                             &kp LC(LA(RIGHT))   &kp HOME  &kp END    &trans        &kp LC(LA(RIGHT))  
                 &trans  &trans  &trans  &trans  &trans                             &kp LA(LEFT)        &kp DOWN  &kp UP     &kp LA(RIGHT) &trans  
-                &trans  &trans  &trans  &trans  &trans                             &kp LGUI(LA(C))     &kp PG_DN &kp PG_UP  &trans        &trans  
-                           &trans &trans                                                     &kp LC(LALT(ENTER))   &trans 
+                &trans  &trans  &trans  &trans  &trans                             &kp LG(LA(C))       &kp PG_DN &kp PG_UP  &trans        &trans  
+                           &trans &trans                                                     &kp LC(LA(ENTER))   &trans 
             >;
         };
     };
