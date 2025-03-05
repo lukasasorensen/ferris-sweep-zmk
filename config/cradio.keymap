@@ -115,11 +115,11 @@
          *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
          *     │    │    │    │    │    │      │home│end │    │    │    │
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │    │    │    │ ❇️  │    │      │ ⬅  │ ⬇  │ ⬆  │  ⮕ │vol+│
+         *     │    │    │    │ ❇️  │    │      │ ⬅  │ ⬇  │ ⬆  │  ⮕ │    │
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │    │    │    │    │    │      │    │pgdn│pgup│    │vol-│
+         *     │    │    │    │    │    │      │    │pgdn│pgup│    │    │
          *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
-         *                    │copy│past│      │sp-l│sp-r│
+         *                    │ L5 │SPCS│      │    │    │
          *                    └────┴────┘      └────┴────┘
          *              (more symbols)
          */
@@ -128,7 +128,7 @@
                 &none  &none  &none  &none  &kp CAPS                          &kp LC(LA(LS(LG(LEFT)))) &kp HOME   &kp END    &none      &kp LC(LA(LS(LG(RIGHT))))  
                 &none  &none  &none  &none  &none                             &kp LEFT                   &kp DOWN   &kp UP     &kp RIGHT  &none  
                 &none  &none  &none  &none  &none                             &none                      &kp PG_DN  &kp PG_UP  &none      &none  
-                          &mo L5 &kp TAB                                                   &kp ENTER  &kp SPACE
+                          &mo L5 &kp LS(LC(LA(LG(UP))))                                                   &kp ENTER  &kp SPACE
             >;
         };
 
