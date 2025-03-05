@@ -17,7 +17,17 @@
 #define L4 4
 #define L5 5
 
-#define TAPPING_TERM 200
+&lt {
+    tapping-term-ms = <200>;
+    flavor = "balanced";
+    require-prior-idle-ms = <50>;
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    flavor = "balanced";
+    require-prior-idle-ms = <50>;
+};
 
 / {
     keymap {
