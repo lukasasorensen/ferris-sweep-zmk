@@ -170,10 +170,10 @@
          */
         layer5 {
             bindings = <
-                &trans  &trans  &trans  &trans  &trans                             &kp LC(LA(RIGHT))   &kp HOME  &kp END    &trans        &kp LC(LA(RIGHT))  
-                &trans  &trans  &trans  &trans  &trans                             &kp LA(LEFT)        &kp DOWN  &kp UP     &kp LA(RIGHT) &trans  
-                &trans  &trans  &trans  &trans  &trans                             &kp LG(LA(C))       &kp PG_DN &kp PG_UP  &trans        &trans  
-                           &trans &trans                                                     &kp LC(LA(ENTER))   &trans 
+                &sys_reset &trans  &trans  &trans  &trans                             &kp LC(LA(RIGHT))   &kp HOME  &kp END    &trans        &kp LC(LA(RIGHT))  
+                &trans     &trans  &trans  &trans  &trans                             &kp LA(LEFT)        &kp DOWN  &kp UP     &kp LA(RIGHT) &trans  
+                &trans     &trans  &trans  &trans  &trans                             &kp LG(LA(C))       &kp PG_DN &kp PG_UP  &trans        &sys_reset  
+                               &trans &trans                                                     &kp LC(LA(ENTER))   &trans 
             >;
         };
     };
