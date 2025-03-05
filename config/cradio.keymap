@@ -24,6 +24,34 @@
         compatible = "zmk,keymap";
 
         // Layer 0
+        /*
+         * Layer 0 - default alpha layer
+         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
+         *     │  Q │  W │  E │  R │  T │      │  Y │  U │  I │  O │  P │
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │  A │  S │  D │  F │  G │      │  H │  J │  K │  L │  ; │
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │  Z │  X │  C │  V │  B │      │  N │  M │  , │  . │  / │
+         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
+         *                    │BKSP│TAB │      │ENTR│SPC │
+         *                    └────┴────┘      └────┴────┘
+         *                     ctrl cmd         alt  MO 1
+         *
+         * Layer 0 alt hold keys
+         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
+         *     │    │    │    │    │    │      │    │    │    │    │    │
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │    │    │    │MO-3│MO-4│      │    │    │    │    │MO-1│
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │SHFT│    │    │    │    │      │    │    │    │    │SHFT│
+         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
+         *                    │CTRL│CMD │-HYPR-│ALT │SYMB│
+         *                    └────┴────┘      └────┴────┘
+         *                       |_____________________|
+         *                                  |
+         *                    combo these more symbols (layer 2)
+         *
+         */
         layer0 {
             bindings = <
            &kp Q         &kp W  &kp E  &kp R  &kp T                &kp Y  &kp U     &kp I     &kp O    &kp P     
@@ -33,7 +61,22 @@
             >;
         };
 
-        // Layer 1
+        /*
+         * Layer 1 - symbols layer 1
+         * Hold Space
+         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
+         *     │  ! │  @ │  { │  } │  | │      │  & │  7 │  8 │  9 │  = │
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │  # │  $ │  ( │  ) │  - │      │  & │  4 │  5 │  6 │  ' │
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │  % │  ^ │  [ │  ] │  ` │      │  0 │  1 │  2 │  3 │  \ │
+         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
+         *                    │more│ ESC│      │ NA │ ❇️  │
+         *                    └────┴────┘      └────┴────┘
+         *                       |_____________________|
+         *                                  |
+         *           combo space + backspace for more symbols (layer 2)
+         */
         layer1 {
             bindings = <
                 &kp EXCL  &kp AT   &kp LBRC  &kp RBRC  &kp PIPE            &kp AMPS  &kp N7  &kp N8  &kp N9  &kp EQUAL 
@@ -43,7 +86,20 @@
             >; 
         };
 
-        // Layer 2
+        /*
+         * Layer 2 - symbols layer 2
+         * Combo Space & Backspace
+         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
+         *     │ESC │  & │  * │  = │  | │      │ NA │  F7│ F8 │ F9 │ F12│
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │  " │  ~ │  - │  + │  _ │      │ NA │  F4│  F5│  F6│ F11│
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │ NA │ NA │  _ │ NA │  ~ │      │ NA │  F1│  F2│  F3│ F10│
+         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
+         *                    │ ❇️  │ NA │      │ NA │ ❇️  │
+         *                    └────┴────┘      └────┴────┘
+         *              (more symbols)
+         */
         layer2 {
             bindings = <
                 &kp ESC  &kp AMPS  &kp APOS   &kp EQUAL &kp BSLH          &none  &kp F7  &kp F8  &kp F9  &kp F12  
@@ -53,7 +109,20 @@
             >;
         };
 
-        // Layer 3
+        /*
+         * Layer 3 - Navigation Layer
+         * Hold F
+         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
+         *     │    │    │    │    │    │      │home│end │    │    │    │
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │    │    │    │ ❇️  │    │      │ ⬅  │ ⬇  │ ⬆  │  ⮕ │vol+│
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │    │    │    │    │    │      │    │pgdn│pgup│    │vol-│
+         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
+         *                    │copy│past│      │sp-l│sp-r│
+         *                    └────┴────┘      └────┴────┘
+         *              (more symbols)
+         */
         layer3 {
             bindings = <
                 &none  &none  &none  &none  &kp CAPS                          &kp LC(LA(LS(LGUI(LEFT)))) &kp HOME   &kp END    &none      &kp LC(LA(LS(LGUI(RIGHT))))  
@@ -63,20 +132,42 @@
             >;
         };
 
-        // Layer 4
+        /*
+         * Layer 4 - Media Layer
+         * Hold G
+         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
+         *     │    │    │    │    │    │      │    │    │    │    │prev│
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │    │    │    │    │ ❇️  │      │mute│vol-│vol+│    │    │
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │    │    │    │    │    │      │    │next│    │    │    │
+         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
+         *                    │    │    │      │stop│play│
+         *                    └────┴────┘      └────┴────┘
+         */
         layer4 {
             bindings = <
-                &none  &none  &none  &none  &none             &none       &none            &none              &none      &kp C_PREV 
-                &none  &none  &none  &none  &none             &kp C_MUTE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &none      &none       
-                &none  &none  &none  &none  &none             &none       &kp C_NEXT       &none              &none      &none       
+                &none  &none  &none  &none  &none             &none       &none             &none            &none      &kp C_PREV 
+                &none  &none  &none  &none  &none             &kp C_MUTE  &kp C_VOLUME_DOWN &kp C_VOLUME_UP  &none      &none       
+                &none  &none  &none  &none  &none             &none       &kp C_NEXT        &none            &none      &none       
                         &none  &kp C_PREV                             &kp C_STOP  &kp C_PLAY_PAUSE
             >;
         };
 
-        // Layer 5
-        // toggled on by F + BSPC(hold)
-        // for alt-arrow word jumping
-        // window left/right/full snapping
+        /*
+         * Layer 5: More Navigation
+         * - Alt Arrow Key word jumping
+         * - Window Snapping
+         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
+         *     │    │    │    │    │    │      │SNP⬅│HOME│END │    │SNP⮕│
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │    │    │    │ ❇️  │    │      │    ⬅ ALT│ ⬇  │ ⬆  │ALT⮕│
+         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
+         *     │    │    │    │    │    │      │Hist│    │ PG⬇│ PG⬆│    │
+         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
+         *                    │ ❇️  │    │      │Full│    │
+         *                    └────┴────┘      └────┴────┘
+         */
         layer5 {
             bindings = <
                 &trans  &trans  &trans  &trans  &trans                             &kp LC(LALT(RIGHT)) &kp HOME  &kp END    &trans        &kp LC(LALT(RIGHT))  
