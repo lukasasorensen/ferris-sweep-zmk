@@ -28,7 +28,7 @@
             bindings = <
            &kp Q         &kp W  &kp E  &kp R  &kp T                &kp Y  &kp U     &kp I     &kp O    &kp P     
            &kp A         &kp S  &kp D  &lt L3 F  &lt L4 G          &kp H  &kp J     &kp K     &kp L    &mt LS(LC(LA(LGUI))) SEMI  
-           &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B                &kp N  &lt L5 M  &kp COMMA &kp DOT  &mt RSHIFT SLASH 
+           &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B                &kp N  &kp M  &kp COMMA &kp DOT  &mt RSHIFT SLASH 
                   &mt LCTRL BSPC &mt LGUI TAB                        &mt RGUI ENTER  &lt L1 SPACE  
             >;
         };
@@ -56,10 +56,10 @@
         // Layer 3
         layer3 {
             bindings = <
-                &none  &none  &none  &none  &kp CAPS                       &none     &kp HOME   &kp END    &none      &none  
-                &none  &none  &none  &none  &none                             &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none  
-                &none  &none  &none  &none  &none                             &none     &kp PG_DN  &kp PG_UP  &none      &none  
-                  &kp LS(LC(LA(LG(LEFT)))) &kp LS(LC(LA(LG(RIGHT))))                  &kp LC(LA(ENTER))  &kp LC(LA(LEFT))
+                &none  &none  &none  &none  &kp CAPS                          &kp LC(LA(LS(LGUI(LEFT)))) &kp HOME   &kp END    &none      &kp LC(LA(LS(LGUI(RIGHT))))  
+                &none  &none  &none  &none  &none                             &kp LEFT                   &kp DOWN   &kp UP     &kp RIGHT  &none  
+                &none  &none  &none  &none  &none                             &none                      &kp PG_DN  &kp PG_UP  &none      &none  
+                          &mo L5 &kp TAB                                                   &kp ENTER  &kp SPACE
             >;
         };
 
@@ -74,12 +74,15 @@
         };
 
         // Layer 5
+        // toggled on by F + BSPC(hold)
+        // for alt-arrow word jumping
+        // window left/right/full snapping
         layer5 {
             bindings = <
-                &none  &none  &none         &none          &sys_reset                  &sys_reset   &none  &none  &none  &none  
-                &none  &none  &kp C_BRI_DN  &kp C_BRI_INC  &bootloader                 &bootloader  &none  &none  &none  &none  
-                &none  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR            &none        &none  &none  &none  &none  
-                               &none  &none                                                   &kp C_VOLUME_UP &kp C_VOLUME_DOWN
+                &trans  &trans  &trans  &trans  &trans                             &kp LC(LALT(RIGHT)) &kp HOME  &kp END    &trans        &kp LC(LALT(RIGHT))  
+                &trans  &trans  &trans  &trans  &trans                             &kp LA(LEFT)        &kp DOWN  &kp UP     &kp LA(RIGHT) &trans  
+                &trans  &trans  &trans  &trans  &trans                             &kp LGUI(LA(C))     &kp PG_DN &kp PG_UP  &trans        &trans  
+                           &trans &trans                                                     &kp LC(LALT(ENTER))   &trans 
             >;
         };
     };
