@@ -91,7 +91,7 @@
             bindings = <
                 &kp EXCL  &kp AT   &kp LBRC  &kp RBRC  &kp PIPE               &kp AMPS  &kp N7  &kp N8  &kp N9  &kp EQUAL 
                 &kp HASH  &kp DOLLAR  &kp LPAR  &kp RPAR  &kp MINUS           &kp COLON &kp N4  &kp N5  &kp N6  &kp SQT
-                &kp PRCNT &kp CARET   &kp LBKT  &kp RBKT  &kp UNDER           &kp N0    &kp N1  &kp N2  &kp N3  &kp FSLH
+                &kp PRCNT &kp CARET   &kp LBKT  &kp RBKT  &kp GRAVE           &kp N0    &kp N1  &kp N2  &kp N3  &kp FSLH
                                    &lt L2 LA(BSPC)  &kp ESC                            &trans  &trans  
             >; 
         };
@@ -173,17 +173,17 @@
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
          *     │    │    │    │ ❇️  │    │      │    ⬅ ALT│ ⬇  │ ⬆  │ALT⮕│
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │    │    │    │    │    │      │Hist│    │ PG⬇│ PG⬆│RSET│
+         *     │BT-1│BT-2│BT-3│BT-4│CLRBT      │Hist│    │ PG⬇│ PG⬆│RSET│
          *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
          *                    │ ❇️  │    │      │Full│    │
          *                    └────┴────┘      └────┴────┘
          */
         layer5 {
             bindings = <
-                &bootloader &trans  &trans  &trans &sys_reset                         &kp LC(LA(RIGHT))   &kp HOME  &kp END    &trans        &kp LC(LA(RIGHT))  
-                &trans     &trans  &trans  &trans  &trans                             &kp LA(LEFT)        &kp DOWN  &kp UP     &kp LA(RIGHT) &trans  
-                &trans     &trans  &trans  &trans  &trans                             &kp LG(LA(C))       &kp PG_DN &kp PG_UP  &trans        &sys_reset  
-                               &trans &trans                                                     &kp LC(LA(ENTER))   &trans 
+                &bootloader  &trans        &trans        &trans        &sys_reset            &kp LC(LA(RIGHT))   &kp HOME  &kp END    &trans        &kp LC(LA(RIGHT))  
+                &trans       &trans        &trans        &trans        &trans                &kp LA(LEFT)        &kp DOWN  &kp UP     &kp LA(RIGHT) &trans  
+                &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR            &kp LG(LA(C))       &kp PG_DN &kp PG_UP  &trans        &sys_reset  
+                               &trans &trans                                                          &kp LC(LA(ENTER))   &trans 
             >;
         };
     };
