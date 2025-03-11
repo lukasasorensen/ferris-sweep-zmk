@@ -247,6 +247,6 @@
                 &kp Z  &kp X  &kp C  &kp V  &kp B                                                 &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH 
                            &lt L3 BSPC &mt LS(LC(LA(LGUI))) TAB                                                &lt L2 ENTER  &lt L1 SPACE  
             >;
-        }
+        };
     };
 };
