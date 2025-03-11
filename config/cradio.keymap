@@ -20,7 +20,6 @@
 #define L3 3
 #define L4 4
 #define L5 5
-#define L6 6
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
@@ -62,7 +61,8 @@ ZMK_HOLD_TAP(hmr,
 
         // Layer 0
         /*
-         * Layer 0 - default alpha layer
+         * Layer 0 - Expermimental Homerow mods layer
+         *           it is a copy of layer 1, with ctrl/alt/gui/shit on homerow keys
          *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
          *     │  Q │  W │  E │  R │  T │      │  Y │  U │  I │  O │  P │
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
@@ -78,11 +78,11 @@ ZMK_HOLD_TAP(hmr,
          *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
          *     │    │    │    │    │    │      │    │    │    │    │    │
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │    │    │    │MO-3│MO-4│      │    │    │    │    │MO-1│
+         *     │GUI │ALT │SHFT│CTRL│LY-4│      │HYPR│CTRL│SHFT│ALT │GUI │
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │SHFT│    │    │    │    │      │    │    │    │    │SHFT│
+         *     │    │    │    │    │    │      │    │    │    │    │    │
          *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
-         *                    │CTRL│CMD │-HYPR-│ALT │SYMB│
+         *                    │LY-3│HYPR│      │LY-2│SYMB│
          *                    └────┴────┘      └────┴────┘
          *                       |_____________________|
          *                                  |
@@ -91,10 +91,10 @@ ZMK_HOLD_TAP(hmr,
          */
         layer0 {
             bindings = <
-           &kp Q         &kp W  &kp E  &kp R  &kp T                &kp Y  &kp U     &kp I     &kp O    &kp P     
-           &kp A         &kp S  &kp D  &lt L3 F  &lt L4 G          &kp H  &kp J     &kp K     &kp L    &mt LS(LC(LA(LGUI))) SEMI  
-           &mt LSHIFT Z  &kp X  &kp C  &kp V  &kp B                &kp N  &kp M  &kp COMMA &kp DOT  &mt RSHIFT SLASH 
-                  &mt LCTRL BSPC &mt LGUI TAB                        &mt RGUI ENTER  &lt L1 SPACE  
+                &kp Q         &kp W  &kp E  &kp R  &kp T                                          &kp Y  &kp U     &kp I     &kp O    &kp P     
+                &hml LGUI A &hml LALT S &hml LSHIFT D &hml LCTRL F  &lt L4 G          &mt LS(LC(LA(LGUI))) H  &hmr LCTRL J &hmr LSHIFT K &hmr LALT L &hmr LGUI SEMI  
+                &kp Z  &kp X  &kp C  &kp V  &kp B                                                 &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH 
+                           &lt L3 BSPC &mt LS(LC(LA(LGUI))) TAB                                                &lt L2 ENTER  &lt L1 SPACE  
             >;
         };
 
@@ -133,7 +133,7 @@ ZMK_HOLD_TAP(hmr,
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
          *     │ NA │ NA │  _ │ NA │  ~ │      │ F1 │  F1│  F2│  F3│ F10│
          *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
-         *                    │ ❇️  │to 0│      │To 6│ ❇️  │
+         *                    │ ❇️  │    │      │    │ ❇️  │
          *                    └────┴────┘      └────┴────┘
          *              (more symbols)
          */
@@ -142,7 +142,7 @@ ZMK_HOLD_TAP(hmr,
                 &kp ESC  &kp AMPS  &kp APOS   &kp EQUAL &kp BSLH          &kp AMPS &kp F7  &kp F8  &kp F9  &kp F12  
                 &kp DQT  &kp TILDE &kp MINUS  &kp PLUS  &kp UNDER         &none    &kp F4  &kp F5  &kp F6  &kp DQT
                 &none    &none     &kp UNDER  &none     &kp TILDE         &kp F11  &kp F1  &kp F2  &kp F3  &kp F10  
-                                   &trans  &tog L0                                 &tog L6  &trans
+                                   &trans  &none                                &none &trans
             >;
         };
 
@@ -214,43 +214,5 @@ ZMK_HOLD_TAP(hmr,
             >;
         };
 
-        // Layer 6
-        /*
-         * Layer 6 - Expermimental Homerow mods layer
-         *           it is a copy of layer 1, with ctrl/alt/gui/shit on homerow keys
-         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
-         *     │  Q │  W │  E │  R │  T │      │  Y │  U │  I │  O │  P │
-         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │  A │  S │  D │  F │  G │      │  H │  J │  K │  L │  ; │
-         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │  Z │  X │  C │  V │  B │      │  N │  M │  , │  . │  / │
-         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
-         *                    │BKSP│TAB │      │ENTR│SPC │
-         *                    └────┴────┘      └────┴────┘
-         *                     ctrl cmd         alt  MO 1
-         *
-         * Layer 0 alt hold keys
-         *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
-         *     │    │    │    │    │    │      │    │    │    │    │    │
-         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │GUI │ALT │SHFT│CTRL│LY-4│      │HYPR│CTRL│SHFT│ALT │GUI │
-         *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │    │    │    │    │    │      │    │    │    │    │    │
-         *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
-         *                    │LY-3│HYPR│      │LY-2│SYMB│
-         *                    └────┴────┘      └────┴────┘
-         *                       |_____________________|
-         *                                  |
-         *                    combo these more symbols (layer 2)
-         *
-         */
-        layer6 {
-            bindings = <
-                &kp Q         &kp W  &kp E  &kp R  &kp T                                          &kp Y  &kp U     &kp I     &kp O    &kp P     
-                &hml LGUI A &hml LALT S &hml LSHIFT D &hml LCTRL F  &lt L4 G          &mt LS(LC(LA(LGUI))) H  &hmr LCTRL J &hmr LSHIFT K &hmr LALT L &hmr LGUI SEMI  
-                &kp Z  &kp X  &kp C  &kp V  &kp B                                                 &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH 
-                           &lt L3 BSPC &mt LS(LC(LA(LGUI))) TAB                                                &lt L2 ENTER  &lt L1 SPACE  
-            >;
-        };
     };
 };
