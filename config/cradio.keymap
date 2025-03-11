@@ -19,13 +19,13 @@
 
 &lt {
     tapping-term-ms = <200>;
-    flavor = "balanced";
+    flavor = "tap-preferred";
     require-prior-idle-ms = <50>;
 };
 
 &mt {
     tapping-term-ms = <200>;
-    flavor = "balanced";
+    flavor = "tap-preferred";
     require-prior-idle-ms = <50>;
 };
 
