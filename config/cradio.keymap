@@ -133,7 +133,7 @@ ZMK_HOLD_TAP(hmr,
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
          *     │ NA │ NA │  _ │ NA │  ~ │      │ F1 │  F1│  F2│  F3│ F10│
          *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
-         *                    │ ❇️  │    │      │    │ ❇️  │
+         *                    │ ❇️  │CAPS│      │    │ ❇️  │
          *                    └────┴────┘      └────┴────┘
          *              (more symbols)
          */
@@ -142,7 +142,7 @@ ZMK_HOLD_TAP(hmr,
                 &kp ESC  &kp AMPS  &kp APOS   &kp EQUAL &kp BSLH          &kp AMPS &kp F7  &kp F8  &kp F9  &kp F12  
                 &kp DQT  &kp TILDE &kp MINUS  &kp PLUS  &kp UNDER         &none    &kp F4  &kp F5  &kp F6  &kp DQT
                 &none    &none     &kp UNDER  &none     &kp TILDE         &kp F11  &kp F1  &kp F2  &kp F3  &kp F10  
-                                   &trans  &none                                &none &trans
+                                   &trans  &kp CAPS                                &none &trans
             >;
         };
 
