@@ -78,7 +78,7 @@ ZMK_HOLD_TAP(hmr,
          *     ┌────┬────┬────┬────┬────┐      ┌────┬────┬────┬────┬────┐
          *     │    │    │    │    │    │      │    │    │    │    │    │
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
-         *     │GUI │ALT │SHFT│CTRL│LY-4│      │HYPR│CTRL│SHFT│ALT │GUI │
+         *     │SHFT│ALT │GUI │CTRL│LY-4│      │HYPR│CTRL│GUI │ALT │SHFT│
          *     ├────┼────┼────┼────┼────┤      ├────┼────┼────┼────┼────┤
          *     │    │    │    │    │    │      │    │    │    │    │    │
          *     └────┴────┴────┼────┼────┘      └────┼────┼────┴────┴────┘
@@ -92,7 +92,7 @@ ZMK_HOLD_TAP(hmr,
         layer0 {
             bindings = <
                 &kp Q         &kp W  &kp E  &kp R  &kp T                                          &kp Y  &kp U     &kp I     &kp O    &kp P     
-                &hml LGUI A &hml LALT S &hml LSHIFT D &hml LCTRL F  &lt L4 G          &mt LS(LC(LA(LGUI))) H  &hmr LCTRL J &hmr LSHIFT K &hmr LALT L &hmr LGUI SEMI  
+                &hml LSHIFT A &hml LALT S &hml LGUI D &hml LCTRL F  &lt L4 G          &mt LS(LC(LA(LGUI))) H  &hmr LCTRL J &hmr LGUI K &hmr LALT L &hmr RSHIFT SEMI  
                 &kp Z  &kp X  &kp C  &kp V  &kp B                                                 &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH 
                            &lt L3 BSPC &mt LS(LC(LA(LGUI))) TAB                                                &lt L2 ENTER  &lt L1 SPACE  
             >;
